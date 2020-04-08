@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "chrome extension to switch any url",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "node ./config/scripts/dev.js",
+    "build": "node ./config/scripts/prod.js"
+  },
   "keywords": [
     "chrome",
     "extension",
@@ -17,11 +20,18 @@
     "@types/react-dom": "^16.9.6",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
+    "css-loader": "^3.5.1",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.4",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
     "shelljs": "^0.8.3",
     "source-map-loader": "^0.2.4",
+    "style-loader": "^1.1.3",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
+    "url-loader": "^4.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"

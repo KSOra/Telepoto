@@ -1,7 +1,10 @@
 import React from "react";
 import {render} from "react-dom";
+import './global.scss';
 
 render(
-    <div>hello world!</div>,
+    <div className={'content'}>
+      hello world!
+    </div>,
     document.getElementById("app")
 );

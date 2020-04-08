@@ -6,7 +6,9 @@ const config = {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
   entry: {
-    page: path.resolve(__dirname, '../src/page/index.tsx')
+    page: path.resolve(__dirname, '../src/pages'),
+    content: path.resolve(__dirname, '../src/content'),
+    background: path.resolve(__dirname, '../src/background'),
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -34,9 +36,21 @@ const config = {
           }
         ]
       }, {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader'
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      }, {
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+            fallback: 'file-loader'
+          },
+        }]
       }
     ]
   },
@@ -49,7 +63,7 @@ const config = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/page/index.ejs')
+      template: path.resolve(__dirname, '../src/pages/index.ejs')
     })
   ]
 };
