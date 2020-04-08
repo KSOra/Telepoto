@@ -13,6 +13,11 @@
     "switch",
     "proxy"
   ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "author": "ksora",
   "license": "ISC",
   "devDependencies": {
